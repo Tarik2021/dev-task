@@ -4,7 +4,8 @@
   "description": "This is server for Mistral task",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "seed": "cd src/data && node seed.data"
   },
   "author": "Tarik",
   "license": "ISC",

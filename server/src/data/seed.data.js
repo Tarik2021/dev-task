@@ -22,6 +22,7 @@ async function seedData() {
    await axios.get(SHOWS_URL).then((res) => (shows = res.data.items));
    for (let i in shows) await new Show(shows[i]).save();
 
+   console.log("Database seeded");
    process.exit();
 }
 
