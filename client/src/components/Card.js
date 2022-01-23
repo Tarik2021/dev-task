@@ -37,7 +37,7 @@ const styles = {
       boxShadow: "1px 1px 3px 1px #000000",
    },
    image: {
-      width: "140px",
+      width: "120px",
    },
    info: {
       textAlign: "left",

@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRedux } from "../hooks/useRedux";
-import { useGetData } from "../hooks/useGetData";
 import { Grid, Button, Container } from "@mui/material";
 
 import Card from "./Card";
 
 export default function Home() {
-   const getData = useGetData();
    const { useSelector } = useRedux();
    const data = useSelector((s) => s.store.data);
    const tab = useSelector((s) => s.store.tab);
@@ -14,7 +12,6 @@ export default function Home() {
    const [showMore, setShowMore] = useState(10);
 
    useEffect(() => {
-      getData(tab);
       setShowMore(10);
    }, [tab]);
 
@@ -25,7 +22,7 @@ export default function Home() {
    //prettier-ignore
    return (
       <Container>
-         <Grid container style={styles.home}>
+         <Grid container style={styles.home} >
 
             {data 
 
@@ -58,6 +55,7 @@ export default function Home() {
 const styles = {
    home: {
       padding: "10px",
+      justifyContent: "center",
    },
    more: {
       width: "100%",

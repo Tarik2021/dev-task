@@ -26,6 +26,7 @@ export default function Login() {
    return !user.token ? (
       <GoogleLogin
          clientId={id}
+         cookiePolicy={'single_host_origin'}
          render={(e) => (
             <Button onClick={e.onClick} variant="contained" color="primary" style={{ marginTop: "5px" }}>
                google login

@@ -1,9 +1,11 @@
 import { MOVIES, SHOWS } from "../constants/constants";
 import { Typography } from "@mui/material";
 import { useRedux } from "../hooks/useRedux";
+import { useGetData } from "../hooks/useGetData";
 
 export default function Tabs() {
    const { useSelector, dispatch, actions } = useRedux();
+   const getData = useGetData();
    const tab = useSelector((s) => s.store.tab);
    const user = useSelector((s) => s.store.user);
 
@@ -11,6 +13,7 @@ export default function Tabs() {
       dispatch(actions.setData([]));
       dispatch(actions.setSearch(""));
       dispatch(actions.setTab(tab));
+      getData(tab);
    }
 
    //prettier-ignore
