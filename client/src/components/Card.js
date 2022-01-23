@@ -7,7 +7,7 @@ export default function Card({ d }) {
    return (
       <Grid item style={styles.card}>
          <div>
-            <img src={d.image} alt={`${d.name} image`} />
+            <img style={styles.image} src={d.image} alt={`${d.name} image`} />
             <div style={styles.stars}><Rate d={d} /></div>
             <Typography variant="h6" children={d.title} />
             <Typography variant="subtitle2" children={d.crew} />
@@ -35,6 +35,9 @@ const styles = {
       justifyContent: "space-between",
       backgroundColor: "rgba(200,200,200,0.2)",
       boxShadow: "1px 1px 3px 1px #000000",
+   },
+   image: {
+      width: "140px",
    },
    info: {
       textAlign: "left",
