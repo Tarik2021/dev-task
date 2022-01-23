@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useRedux } from "../hooks/useRedux";
 import { Grid, Button, Container } from "@mui/material";
+import { useGetData } from "../hooks/useGetData";
 
 import Card from "./Card";
 
 export default function Home() {
    const { useSelector } = useRedux();
+   const getData = useGetData();
    const data = useSelector((s) => s.store.data);
    const tab = useSelector((s) => s.store.tab);
    const user = useSelector((s) => s.store.user);
@@ -13,6 +15,7 @@ export default function Home() {
 
    useEffect(() => {
       setShowMore(10);
+      getData(tab);
    }, [tab]);
 
    function showMoreHandler() {
