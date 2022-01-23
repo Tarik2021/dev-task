@@ -44,9 +44,9 @@
 #### Server
 
 -  cd server
+-  npm i
 -  npm run seed 
 * note: database is seeded from external api
--  npm i
 -  npm start
 
 #### Client
